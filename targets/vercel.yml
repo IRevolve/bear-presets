@@ -1,4 +1,0 @@
-name: vercel
-deploy:
-  - name: Deploy
-    run: vercel --prod

@@ -15,11 +15,8 @@ targets:
   - docker
   - cloudrun
   - cloudrun-job
+  - kubernetes
+  - helm
   - lambda
   - s3
   - s3-static
-  - kubernetes
-  - helm
-  - fly
-  - vercel
-  - netlify
