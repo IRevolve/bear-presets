@@ -35,14 +35,11 @@ use:
 | `docker` | Docker build & push |
 | `cloudrun` | Google Cloud Run (service) |
 | `cloudrun-job` | Google Cloud Run (job) |
+| `kubernetes` | Kubernetes kubectl |
+| `helm` | Helm charts |
 | `lambda` | AWS Lambda |
 | `s3` | AWS S3 sync |
 | `s3-static` | S3 + CloudFront static site |
-| `kubernetes` | Kubernetes kubectl |
-| `helm` | Helm charts |
-| `fly` | Fly.io |
-| `vercel` | Vercel |
-| `netlify` | Netlify |
 
 ## Contributing
 
@@ -91,4 +88,4 @@ deploy:
 
 ## License
 
-MIT
+Apache 2.0
