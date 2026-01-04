@@ -1,0 +1,4 @@
+name: fly
+deploy:
+  - name: Deploy
+    run: fly deploy --image $NAME:$VERSION

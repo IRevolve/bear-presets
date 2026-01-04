@@ -1,0 +1,10 @@
+name: lambda
+defaults:
+  REGION: eu-central-1
+  RUNTIME: provided.al2
+  MEMORY: "128"
+deploy:
+  - name: Package
+    run: zip -r function.zip .
+  - name: Deploy
+    run: aws lambda update-function-code --function-name $NAME --zip-file fileb://function.zip --region $REGION

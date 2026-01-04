@@ -1,0 +1,8 @@
+name: docker
+defaults:
+  REGISTRY: docker.io
+deploy:
+  - name: Build image
+    run: docker build -t $REGISTRY/$NAME:$VERSION .
+  - name: Push image
+    run: docker push $REGISTRY/$NAME:$VERSION

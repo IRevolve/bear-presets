@@ -1,0 +1,17 @@
+name: go
+detection:
+  files:
+    - go.mod
+validation:
+  setup:
+    - name: Download modules
+      run: go mod download
+  lint:
+    - name: Vet
+      run: go vet ./...
+  test:
+    - name: Test
+      run: go test -race ./...
+  build:
+    - name: Build
+      run: go build -o dist/app .

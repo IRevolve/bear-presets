@@ -1,0 +1,6 @@
+name: netlify
+deploy:
+  - name: Build
+    run: npm run build
+  - name: Deploy
+    run: netlify deploy --prod --dir=dist

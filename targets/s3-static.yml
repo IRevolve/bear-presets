@@ -1,0 +1,10 @@
+name: s3-static
+defaults:
+  REGION: eu-central-1
+deploy:
+  - name: Build
+    run: npm run build
+  - name: Sync
+    run: aws s3 sync ./dist s3://$BUCKET --delete
+  - name: Invalidate
+    run: aws cloudfront create-invalidation --distribution-id $CF_DIST --paths '/*'

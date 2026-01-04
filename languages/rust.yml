@@ -1,0 +1,17 @@
+name: rust
+detection:
+  files:
+    - Cargo.toml
+validation:
+  setup:
+    - name: Fetch
+      run: cargo fetch
+  lint:
+    - name: Clippy
+      run: cargo clippy -- -D warnings
+  test:
+    - name: Test
+      run: cargo test
+  build:
+    - name: Build
+      run: cargo build --release

@@ -1,0 +1,6 @@
+name: s3
+defaults:
+  REGION: eu-central-1
+deploy:
+  - name: Sync
+    run: aws s3 sync ./dist s3://$BUCKET --delete

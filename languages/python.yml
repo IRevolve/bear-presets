@@ -1,0 +1,19 @@
+name: python
+detection:
+  files:
+    - requirements.txt
+    - pyproject.toml
+    - setup.py
+validation:
+  setup:
+    - name: Install
+      run: pip install -r requirements.txt 2>/dev/null || pip install -e .
+  lint:
+    - name: Lint
+      run: ruff check . 2>/dev/null || pylint **/*.py 2>/dev/null || true
+  test:
+    - name: Test
+      run: pytest 2>/dev/null || python -m unittest discover 2>/dev/null || true
+  build:
+    - name: Build
+      run: python -m build 2>/dev/null || echo 'No build step'

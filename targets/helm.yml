@@ -1,0 +1,10 @@
+name: helm
+defaults:
+  NAMESPACE: default
+deploy:
+  - name: Build
+    run: docker build -t $REGISTRY/$NAME:$VERSION .
+  - name: Push
+    run: docker push $REGISTRY/$NAME:$VERSION
+  - name: Upgrade
+    run: helm upgrade --install $NAME ./chart --set image.tag=$VERSION -n $NAMESPACE

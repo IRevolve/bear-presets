@@ -1,0 +1,19 @@
+name: java
+detection:
+  files:
+    - pom.xml
+    - build.gradle
+    - build.gradle.kts
+validation:
+  setup:
+    - name: Download
+      run: mvn dependency:go-offline 2>/dev/null || gradle dependencies 2>/dev/null || true
+  lint:
+    - name: Check
+      run: mvn checkstyle:check 2>/dev/null || gradle check 2>/dev/null || true
+  test:
+    - name: Test
+      run: mvn test 2>/dev/null || gradle test 2>/dev/null
+  build:
+    - name: Build
+      run: mvn package -DskipTests 2>/dev/null || gradle build -x test 2>/dev/null

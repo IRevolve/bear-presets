@@ -1,0 +1,25 @@
+# Bear Presets Index
+# This file lists all available presets
+
+version: 1
+
+languages:
+  - go
+  - node
+  - typescript
+  - python
+  - rust
+  - java
+
+targets:
+  - docker
+  - cloudrun
+  - cloudrun-job
+  - lambda
+  - s3
+  - s3-static
+  - kubernetes
+  - helm
+  - fly
+  - vercel
+  - netlify
